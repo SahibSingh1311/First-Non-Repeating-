@@ -17,12 +17,11 @@ static int nonRepeating(int[] arr){
 			map.put(arr[i],map.get(arr[i]) + 1);	//else increment the value of current element by 1
 		}	
 	}
-	for(Map.Entry<Integer,Integer> e : map.entrySet()){	//accessing hashmap
-		if(e.getValue()==1)				//if value of current key(element) is 1 then return current key.
-			{
-				return e.getKey();
-			}
+	for(int i=0;i<arr.length;i++){
+		if(map.get(arr[i])==1){
+			return arr[i];
 		}
-	return '\0';				//return null;
+	}
+	return -1;			
 }
 }
